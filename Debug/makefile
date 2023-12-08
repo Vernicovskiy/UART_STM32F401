@@ -63,8 +63,8 @@ all: main-build
 main-build: echo_usart1.elf secondary-outputs
 
 # Tool invocations
-echo_usart1.elf echo_usart1.map: $(OBJS) $(USER_OBJS) D:\Nero\UART_STM32\echo_usart1\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "echo_usart1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Nero\UART_STM32\echo_usart1\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="echo_usart1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+echo_usart1.elf echo_usart1.map: $(OBJS) $(USER_OBJS) D:\GitHub_Clone\UART_STM32F401\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "echo_usart1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\GitHub_Clone\UART_STM32F401\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="echo_usart1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
